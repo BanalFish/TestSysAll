@@ -1,0 +1,10 @@
+cn\code\testsys\domain\Answer.class
+cn\code\testsys\domain\TestGrade.class
+cn\code\testsys\domain\Question.class
+cn\code\testsys\web\interceptor\LoginInterceptor.class
+cn\code\testsys\domain\User.class
+cn\code\testsys\web\controller\LoginController.class
+cn\code\testsys\util\DateUtil.class
+cn\code\testsys\domain\Course.class
+cn\code\testsys\domain\Test.class
+cn\code\testsys\domain\TestPaper.class
