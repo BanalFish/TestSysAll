@@ -3,7 +3,7 @@
 <header class="main-header">
     <a href="../../index2.html" class="logo">
         <span class="logo-mini">CRM</span>
-        <span class="logo-lg"><b>叩丁狼客户管理系统</b></span>
+        <span class="logo-lg"><b>顶呱呱考试系统</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">

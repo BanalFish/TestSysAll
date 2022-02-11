@@ -4,16 +4,16 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>教师功能</span>
+                    <i class="fa fa-dashboard"></i> <span>教师模块</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li name="department"><a href="/teacher/list"><i class="fa fa-circle-o"></i> 课程管理</a></li>
-                    <li name="employee"><a href="/teacher/testpaper"><i class="fa fa-circle-o"></i> 题库管理</a></li>
-                    <li name="permission"><a href="/teacher/grade"><i class="fa fa-circle-o"></i> 试卷管理</a></li>
-                    <li name="role"><a href="/teacher/show"><i class="fa fa-circle-o"></i> 统计分析</a></li>
+                    <li name="department"><a href="/teacher/course/list"><i class="fa fa-circle-o"></i> 课程管理</a></li>
+                    <li name="employee"><a href="/teacher/questions/list"><i class="fa fa-circle-o"></i> 题库管理</a></li>
+                    <li name="permission"><a href="/teacher/testpaper/list"><i class="fa fa-circle-o"></i> 试卷管理</a></li>
+                    <li name="role"><a href="/teacher/analysis/list"><i class="fa fa-circle-o"></i> 统计分析</a></li>
                 </ul>
             </li>
             <li class="treeview">

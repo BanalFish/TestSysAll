@@ -8,7 +8,7 @@ import java.util.Date;
 @Setter
 @Getter
 public class Test {
-    private int id;
+    private Long id;
     private String name;
     private TestPaper testPaper;
     private Date startTime;

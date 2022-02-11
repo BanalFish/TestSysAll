@@ -14,8 +14,9 @@ import java.util.Date;
 @NoArgsConstructor
 public class Course {
 
-    private int id;
+    private Long id;
     private String name;
     private Date startDate;
+    private int count;
 
 }

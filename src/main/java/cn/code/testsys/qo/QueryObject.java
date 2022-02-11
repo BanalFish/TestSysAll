@@ -1,4 +1,4 @@
-package cn.wolfcode.rbac.qo;
+package cn.code.testsys.qo;
 
 public class QueryObject {
 	private int currentPage = 1;

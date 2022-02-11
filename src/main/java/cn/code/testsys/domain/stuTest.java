@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 
 public class stuTest {
-    private int id;
+    private Long id;
     private Test test;
     private User student;
     private int total;
