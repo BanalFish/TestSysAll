@@ -4,20 +4,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-<!--  <filter>-->
-<!--    <filter-name>shiroFilterFactoryBean</filter-name>-->
-<!--    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
-<!--    &lt;!&ndash;DelegatingFilterProxy 是一个代理类，所有的请求都会首先发到这个filter代理，-->
-<!--     然后再按照"filter-name"委派到spring中的这个bean。 &ndash;&gt;-->
-<!--    <init-param>-->
-<!--      <param-name>targetFilterLifecycle</param-name>-->
-<!--      <param-value>true</param-value>-->
-<!--    </init-param>-->
-<!--  </filter>-->
-<!--  <filter-mapping>-->
-<!--    <filter-name>shiroFilterFactoryBean</filter-name>-->
-<!--    <url-pattern>/*</url-pattern>-->
-<!--  </filter-mapping>-->
+  <filter>
+    <filter-name>shiroFilterFactoryBean</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <!--DelegatingFilterProxy 是一个代理类，所有的请求都会首先发到这个filter代理，
+     然后再按照"filter-name"委派到spring中的这个bean。 -->
+    <init-param>
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>shiroFilterFactoryBean</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
   <!--配置编码过滤器-->
   <filter>

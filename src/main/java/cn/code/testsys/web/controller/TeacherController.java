@@ -7,11 +7,24 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/teacher")
-public class LoginController {
+public class TeacherController {
 
-    @RequestMapping("/list")
-    public String index(){
+    @RequestMapping("/analysis/list")
+    public String anaList(){
         ModelAndView mv=new ModelAndView();
-        return "/teacher/list";
+        return "teacher/analysis/list";
+    }
+
+
+    @RequestMapping("/questions/list")
+    public String quesList(){
+        ModelAndView mv=new ModelAndView();
+        return "teacher/questions/list";
+    }
+
+    @RequestMapping("/testpaper/list")
+    public String paperList(){
+        ModelAndView mv=new ModelAndView();
+        return "teacher/testpaper/list";
     }
 }

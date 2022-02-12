@@ -1,9 +1,22 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 86155
+  Date: 2022/2/11
+  Time: 18:53
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
 <html>
+<head>
+    <title>测试</title>
+</head>
 <body>
-<h2>Hello World!</h2>
-<a href="${pageContext.request.contextPath}/teacher/list">进入测试页面</a>
+Hello world！
+<a href="login.html">登录</a>
+<a href="/teacher/course/list">课程</a>
+<a href="/teacher/analysis/list">统计分析</a>
+<a href="/teacher/questions/list">题库</a>
+<a href="/teacher/testpaper/list">试卷</a>
+
 </body>
 </html>

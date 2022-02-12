@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class TestPaper {
-    private int id;
+    private Long id;
     private String name;
     private int status;
 }

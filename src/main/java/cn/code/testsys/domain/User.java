@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-    private int id;
+public class User implements java.io.Serializable{//接口可去掉，但是会报不影响运行但是看着不舒服的错
+    private Long id;
     private String number;
     private String name;
     private String password;
