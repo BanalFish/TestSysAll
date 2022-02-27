@@ -11,7 +11,7 @@
  Target Server Version : 80022
  File Encoding         : 65001
 
- Date: 08/02/2022 20:13:56
+ Date: 27/02/2022 16:05:44
 */
 
 SET NAMES utf8mb4;
@@ -25,6 +25,7 @@ CREATE TABLE `answer`  (
   `id` int(0) NOT NULL,
   `queID` int(0) NOT NULL,
   `answer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `isTrue` enum('0','1') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '是否为正确答案，1表示是，0表示不是',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_answer_ques_1`(`queID`) USING BTREE,
   CONSTRAINT `fk_answer_ques_1` FOREIGN KEY (`queID`) REFERENCES `ques` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -68,6 +69,7 @@ CREATE TABLE `course`  (
 -- ----------------------------
 -- Records of course
 -- ----------------------------
+INSERT INTO `course` VALUES (1, 'C语言', '2022-02-10 16:19:43', 77);
 
 -- ----------------------------
 -- Table structure for paper_ques
@@ -95,9 +97,10 @@ DROP TABLE IF EXISTS `ques`;
 CREATE TABLE `ques`  (
   `id` int(0) NOT NULL,
   `problem` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `score` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `type` int(0) NULL DEFAULT NULL COMMENT '题目类型',
+  `score` int(0) NULL DEFAULT NULL,
+  `type` int(0) NULL DEFAULT NULL COMMENT '该题目所属类型。如1代表单选，2代表多选等。',
   `courID` int(0) NULL DEFAULT NULL COMMENT '该题对应的科目',
+  `degree` int(0) NOT NULL COMMENT '题目的难易程度，1表示简，2表示中，3表示难',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
@@ -130,9 +133,11 @@ CREATE TABLE `stupaper`  (
 DROP TABLE IF EXISTS `stutest`;
 CREATE TABLE `stutest`  (
   `id` int(0) NOT NULL,
-  `singTestID` int(0) NULL DEFAULT NULL,
-  `stuID` int(0) NULL DEFAULT NULL,
+  `singTestID` int(0) NOT NULL,
+  `stuID` int(0) NOT NULL,
   `total` int(0) NULL DEFAULT NULL COMMENT '总成绩',
+  `finTime` datetime(0) NOT NULL COMMENT '该生交卷时间',
+  `finStatus` int(0) NOT NULL COMMENT '该学生的该场考试结束后的状态，0表示已交卷未批改，1表示已交卷已批改',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `fk_testGrade_cour-test_1`(`singTestID`) USING BTREE,
   INDEX `fk_testGrade_user_1`(`stuID`) USING BTREE,
@@ -170,8 +175,9 @@ CREATE TABLE `test`  (
 DROP TABLE IF EXISTS `testpaper`;
 CREATE TABLE `testpaper`  (
   `id` int(0) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `status` int(0) NULL DEFAULT NULL COMMENT '表示试卷状态，如0表示试卷被保存但是未发布到考试，1表示已经发布到考试',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `status` int(0) NOT NULL COMMENT '表示试卷状态，如0表示试卷被保存但是未发布到考试，或者发布到考试但考试已经结束；1表示已经发布到考试',
+  `allAnswer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '存储一张试卷包含的所有答案',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
@@ -196,7 +202,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, '201931060001', 'aa', '1', 1, 2);
+INSERT INTO `user` VALUES (1, '201931060001', '1', '1', 1, 1);
 
 -- ----------------------------
 -- Table structure for user_cour
@@ -216,5 +222,6 @@ CREATE TABLE `user_cour`  (
 -- ----------------------------
 -- Records of user_cour
 -- ----------------------------
+INSERT INTO `user_cour` VALUES (1, 1, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
