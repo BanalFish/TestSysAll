@@ -45,6 +45,8 @@
             <mvc:exclude-mapping path="/login.html"/>
 
             <mvc:exclude-mapping path="/swagger/**"/>
+            <!--            后面要删除，这里方便接口测试予以放行-->
+            <mvc:exclude-mapping path="/teacher/**"/>
 
             <mvc:exclude-mapping path="/common/nopermission"/>
             <bean class="cn.code.testsys.web.interceptor.LoginInterceptor"/>
