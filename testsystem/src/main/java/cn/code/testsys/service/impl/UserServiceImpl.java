@@ -13,12 +13,12 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     @Override
-    public User getNameAndPass(String name, String password) {
-        return userMapper.getNameAndPass(name, password);
+    public User getByNameAndPass(String name, String password) {
+        return userMapper.getByNameAndPass(name, password);
     }
 
     @Override
-    public User selectUser(Long userid) {
-        return userMapper.selectUser(userid);
+    public User selectById(Long userid) {
+        return userMapper.selectById(userid);
     }
 }

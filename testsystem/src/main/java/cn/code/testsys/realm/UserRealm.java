@@ -22,7 +22,7 @@ public class UserRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token=(UsernamePasswordToken) authenticationToken;
-        User user=iUserService.getNameAndPass(token.getUsername(), String.valueOf(token.getPassword()));
+        User user=iUserService.getByNameAndPass(token.getUsername(), String.valueOf(token.getPassword()));
 
         if(user==null){
             return null;

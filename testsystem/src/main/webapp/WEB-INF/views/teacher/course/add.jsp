@@ -9,6 +9,7 @@
     <%@include file="/WEB-INF/views/common/link.jsp" %>
 </head>
 
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <%@include file="/WEB-INF/views/common/navbar.jsp" %>
@@ -17,26 +18,24 @@
     <%@include file="/WEB-INF/views/common/menu.jsp" %>
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>部门编辑</h1>
+            <h1>课程编辑</h1>
         </section>
         <section class="content">
             <div class="box">
-                <form class="form-horizontal" action="/department/save" method="post" id="editForm">
-                    <input type="hidden" value="${department.id}" name="id">
+                <form class="form-horizontal" action="/teacher/course/save" method="post" id="editForm">
+                    <input type="hidden" value="${course.id}" name="id">
                     <div class="form-group" style="margin-top: 10px;">
                         <label for="name" class="col-sm-1 control-label">名称：</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="name" name="name" value="${department.name}"
-                                   placeholder="请输入部门名">
+                            <input type="text" class="form-control" id="name" name="name" value="${course.name}"
+                                   placeholder="请输入课程名称">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top: 10px;">
-                        <label for="sn" class="col-sm-1 control-label">编码：</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="sn" name="sn" value="${department.sn}"
-                                   placeholder="请输入部门编码">
-                        </div>
-                    </div>
+
+                    <input type="date" value="" id="startDate" name="startDate" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+
+                    <input type="hidden" value="0" id="count" name="count">
+
                     <div class="form-group">
                         <div class="col-sm-offset-1 col-sm-6">
                             <button id="submitBtn" type="submit" class="btn btn-primary">保存</button>
@@ -52,5 +51,7 @@
     </div>
     <%@include file="/WEB-INF/views/common/footer.jsp" %>
 </div>
+
+
 </body>
 </html>

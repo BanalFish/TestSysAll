@@ -3,6 +3,6 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2016-2019 <a href="http://www.wolfcode.cn">叩丁狼</a>.</strong> All rights
+    <strong>Copyright &copy; 2021-2022 <a href="http://localhost:8080/login.html">顶呱呱</a>.</strong> All rights
     reserved.
 </footer>

@@ -4,11 +4,11 @@
 
 
     
-    <select id="getNameAndPass" resultType="cn.code.testsys.domain.User">
+    <select id="getByNameAndPass" resultType="cn.code.testsys.domain.User">
         select * from user where name=#{name} and password=#{password}
     </select>
     
-    <select id="selectUser" resultType="cn.code.testsys.domain.User">
+    <select id="selectById" resultType="cn.code.testsys.domain.User">
         select * from user where id=#{userid}
     </select>
 </mapper>

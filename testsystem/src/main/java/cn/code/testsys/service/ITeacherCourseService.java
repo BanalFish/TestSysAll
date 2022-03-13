@@ -8,12 +8,12 @@ import java.util.List;
 
 public interface ITeacherCourseService {
 
-    List<Course> selectCour();
-
     PageResult<Course> selectCoursePage(CourseQueryObject queryObject);
 
-    void delete(Long id);
+    void delete(Long courID,Long teacherID);
 
     //本系统功能不支持对已有课程进行编辑信息，这里的save只能新增课程
-    void save(Course course);
+    void addCourse(Course course,Long teacherID);
+
+    List<Course> selectByUser(Long id);
 }

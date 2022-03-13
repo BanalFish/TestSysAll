@@ -11,6 +11,6 @@ public class Question {
     private int score;
     private int type;
     private Course course;
-
+    private int degree;//难易程度
 
 }

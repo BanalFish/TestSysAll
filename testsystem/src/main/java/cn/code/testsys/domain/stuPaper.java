@@ -9,8 +9,9 @@ import java.util.List;
 @Getter
 
 public class stuPaper {
+    private Long id;
     private stuTest stuTest;
-    private int queID;
+    private Long queID;
     private List<String> myanswer;
     private List<Integer> grade;
 }

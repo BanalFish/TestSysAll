@@ -13,6 +13,13 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
+        String url=request.getRequestURI();
+        //断点看到swagger的请求中地址包含这些关键字
+        if(url.indexOf("swagger")!=-1||url.indexOf("api-docs")!=-1){
+            return true;
+        }
+
+
         if(handler instanceof HandlerMethod){
             Subject subject = SecurityUtils.getSubject();
             if(!subject.isAuthenticated()){

@@ -11,8 +11,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li name="department"><a href="/teacher/course/list"><i class="fa fa-circle-o"></i> 课程管理</a></li>
-                    <li name="employee"><a href="/teacher/questions/list"><i class="fa fa-circle-o"></i> 题库管理</a></li>
-                    <li name="permission"><a href="/teacher/testpaper/list"><i class="fa fa-circle-o"></i> 试卷管理</a></li>
+                    <li name="employee"><a href="/teacher/ques/list"><i class="fa fa-circle-o"></i> 题库管理</a></li>
+                    <li name="permission"><a href="/teacher/paper/list"><i class="fa fa-circle-o"></i> 试卷管理</a></li>
                     <li name="role"><a href="/teacher/analysis/list"><i class="fa fa-circle-o"></i> 统计分析</a></li>
                 </ul>
             </li>

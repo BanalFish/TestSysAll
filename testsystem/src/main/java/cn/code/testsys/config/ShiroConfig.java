@@ -48,10 +48,14 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/html/**", "anon");
         filterChainDefinitionMap.put("/css/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
+        filterChainDefinitionMap.put("/WEB-INF/swagger/**","anon");
+        filterChainDefinitionMap.put("/config/**","anon");
 
         // 不需要拦截的访问
         filterChainDefinitionMap.put("/login", "anon");
-        // 退出 logout地址，shiro去清除session
+        filterChainDefinitionMap.put("/swagger-ui.html","anon");
+        filterChainDefinitionMap.put("/v2/**","anon");
+
         filterChainDefinitionMap.put("/logout", "logout");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         Map<String, Filter> filters = shiroFilterFactoryBean.getFilters();

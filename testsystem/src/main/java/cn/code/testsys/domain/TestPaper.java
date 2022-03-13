@@ -10,4 +10,5 @@ public class TestPaper {
     private Long id;
     private String name;
     private int status;
+    private String allAnswer;
 }

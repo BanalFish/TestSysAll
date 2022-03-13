@@ -15,8 +15,8 @@ Hello world！
 <a href="login.html">登录</a>
 <a href="/teacher/course/list">课程</a>
 <a href="/teacher/analysis/list">统计分析</a>
-<a href="/teacher/questions/list">题库</a>
-<a href="/teacher/testpaper/list">试卷</a>
+<a href="/teacher/ques/list">题库</a>
+<a href="/teacher/paper/list">试卷</a>
 
 </body>
 </html>

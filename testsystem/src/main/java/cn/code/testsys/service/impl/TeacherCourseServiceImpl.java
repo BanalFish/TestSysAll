@@ -18,11 +18,6 @@ public class TeacherCourseServiceImpl implements ITeacherCourseService {
     private TeacherCourseMapper teacherCourseMapper;
 
     @Override
-    public List<Course> selectCour() {
-        return teacherCourseMapper.selectCour();
-    }
-
-    @Override
     public PageResult<Course> selectCoursePage(CourseQueryObject queryObject) {
         PageResult<Course> pageResult = null;
         int totalCount = teacherCourseMapper.selectCount();
@@ -31,20 +26,27 @@ public class TeacherCourseServiceImpl implements ITeacherCourseService {
             pageResult = new PageResult<>(queryObject.getCurrentPage(),queryObject.getPageSize(),
                     0,new ArrayList<>());
         }else{
-            List<Course> departmentList = teacherCourseMapper.selectCoursePage(queryObject);
+            List<Course> courseList = teacherCourseMapper.selectCoursePage(queryObject);
             pageResult = new PageResult<>(queryObject.getCurrentPage(),queryObject.getPageSize(),
-                    totalCount,departmentList);
+                    totalCount,courseList);
         }
         return pageResult;
     }
 
     @Override
-    public void delete(Long id) {
-        teacherCourseMapper.delete(id);
+    public void delete(Long courID,Long teacherID) {
+        teacherCourseMapper.delTeachAndCourse(courID,teacherID);
+        teacherCourseMapper.delete(courID);
     }
 
     @Override
-    public void save(Course course) {
+    public void addCourse(Course course,Long teacherID) {
         teacherCourseMapper.insert(course);
+        teacherCourseMapper.addTeachAndCourse(course.getId(), teacherID);
+    }
+
+    @Override
+    public List<Course> selectByUser(Long id) {
+        return teacherCourseMapper.selectByUser(id);
     }
 }

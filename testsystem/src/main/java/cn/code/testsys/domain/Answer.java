@@ -9,13 +9,6 @@ public class Answer {
     private Long id;
     private Question question;
     private String answer;
+    private boolean isTrue;
 
-    @Override
-    public String toString() {
-        return "Answer{" +
-                "id=" + id +
-                ", question=" + question +
-                ", answer='" + answer + '\'' +
-                '}';
-    }
 }
