@@ -48,11 +48,18 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/html/**", "anon");
         filterChainDefinitionMap.put("/css/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
+        //swagger
         filterChainDefinitionMap.put("/WEB-INF/swagger/**","anon");
         filterChainDefinitionMap.put("/config/**","anon");
+        filterChainDefinitionMap.put("/swagger-resources/**","anon");
+
+        //后面要删除，这里方便接口测试予以放行
+        filterChainDefinitionMap.put("/teacher/**","anon");
 
         // 不需要拦截的访问
         filterChainDefinitionMap.put("/login", "anon");
+        //swagger
+        filterChainDefinitionMap.put("/swagger/**","anon");
         filterChainDefinitionMap.put("/swagger-ui.html","anon");
         filterChainDefinitionMap.put("/v2/**","anon");
 
