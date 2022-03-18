@@ -10,7 +10,8 @@
         class="ms-content"
       >
         <el-form-item prop="username">
-          <el-input v-model="param.username" placeholder="username">
+          <el-input v-model="param.username" placeholder="username" maxlength=10
+            clearable=true >
             <template #prepend>
               <el-button icon="el-icon-user"></el-button>
             </template>
@@ -23,6 +24,8 @@
             placeholder="password"
             v-model="param.password"
             @keyup.enter="submitForm()"
+            maxlength=10
+            clearable=true
           >
             <template #prepend>
               <el-button icon="el-icon-lock"></el-button>
@@ -112,7 +115,6 @@ export default {
     const submitForm = () => {
       console.log(param, 72);
       login.value.validate((valid) => {
-        console.log(valid, 75);
         if (valid) {
           ElMessage.success("登录成功");
           localStorage.setItem("ms_username", param.username);
@@ -134,7 +136,6 @@ export default {
       login,
       submitForm,
       options,
-    //   value,
     };
   },
 };
@@ -145,7 +146,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url(../assets/img/login-bg.jpg);
+  background-image: url(../assets/img/login-bg2.jpg);
   background-size: 100%;
 }
 .ms-title {
