@@ -42,7 +42,7 @@
             </button>
           </div>
           <!-- <i :class="`el-icon-lx-profile`"></i>  -->
-          <el-select v-model="value" :style="[{ 'margin-bottom': '22px', 'width': '234px'}]">
+          <el-select v-model="param.value" :style="[{ 'margin-bottom': '22px', 'width': '234px'}]">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -74,8 +74,9 @@ export default {
     const param = reactive({
       username: "admin",
       password: "123123",
+      value:'stu'
     });
-    const value = ref("stu");
+    // const value = ref("stu");
     const options = reactive([
       {
         value: "stu",
@@ -109,12 +110,13 @@ export default {
     };
     const login = ref(null);
     const submitForm = () => {
-      console.log(param, value, 72);
+      console.log(param, 72);
       login.value.validate((valid) => {
         console.log(valid, 75);
         if (valid) {
           ElMessage.success("登录成功");
           localStorage.setItem("ms_username", param.username);
+          localStorage.setItem("ms_userprofile", param.value);
           router.push("/");
         } else {
           ElMessage.error("登录失败"); //账户密码错误，不存在，
@@ -132,7 +134,7 @@ export default {
       login,
       submitForm,
       options,
-      value,
+    //   value,
     };
   },
 };
