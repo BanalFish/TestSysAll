@@ -42,6 +42,8 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/nopermission");
         // Shiro连接约束配置，即过滤链的定义
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
+
+
         // 对静态资源设置匿名访问
         filterChainDefinitionMap.put("/favicon.ico**", "anon");
         filterChainDefinitionMap.put("/logo.png**", "anon");
@@ -52,9 +54,6 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/WEB-INF/swagger/**","anon");
         filterChainDefinitionMap.put("/config/**","anon");
         filterChainDefinitionMap.put("/swagger-resources/**","anon");
-
-        //后面要删除，这里方便接口测试予以放行
-        filterChainDefinitionMap.put("/teacher/**","anon");
 
         // 不需要拦截的访问
         filterChainDefinitionMap.put("/login", "anon");
