@@ -5,7 +5,8 @@ const routes = [
     {
         path: '/',
         redirect: '/dashboard'
-    }, {
+    }, 
+    {
         path: "/",
         name: "Home",
         component: Home,
@@ -111,7 +112,8 @@ const routes = [
                 component: () => import (/* webpackChunkName: "editor" */ '../views/Editor.vue')
             }
         ]
-    }, {
+    }, 
+    {
         path: "/login",
         name: "Login",
         meta: {
@@ -127,7 +129,6 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  
     document.title = `${to.meta.title} | vue-manage-system`;
     const role = localStorage.getItem('ms_username');
     if (!role && to.path !== '/login') {

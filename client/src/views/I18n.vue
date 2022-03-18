@@ -16,6 +16,7 @@
             >{{$t('i18n.btn')}}</el-button>
             <div class="list">
                 <h2>{{$t('i18n.title1')}}</h2>
+                <p>{{$t('i18n.test')}}</p>
                 <p>{{$t('i18n.p1')}}</p>
                 <p>{{$t('i18n.p2')}}</p>
                 <p>{{$t('i18n.p3')}}</p>
