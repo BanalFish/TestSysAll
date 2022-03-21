@@ -4,13 +4,13 @@ import router from './router'
 import store from './store'
 import installElementPlus from './plugins/element'
 import './assets/css/icon.css'
-
-import axios from 'axios'
+// import axios from 'axios'
 
 
 const app = createApp(App)
 installElementPlus(app)
 app
+    // .use(axios)
     .use(store)
     .use(router)
     .mount('#app')
