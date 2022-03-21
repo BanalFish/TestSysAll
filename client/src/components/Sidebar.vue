@@ -140,14 +140,12 @@ export default {
         title: "系统首页",
       },
     ];
-    if (localStorage.getItem("ms_userprofile") === "stu") {
+    if (localStorage.getItem("ms_userprofile") === "2") {
       items = common.concat(array.splice(3, 5));
     } else {
       items = array;
     }
-
     const route = useRoute();
-
     const onRoutes = computed(() => {
       return route.path;
     });

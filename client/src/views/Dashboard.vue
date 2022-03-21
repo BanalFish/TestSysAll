@@ -12,11 +12,11 @@
                     </div>
                     <div class="user-info-list">
                         上次登录时间：
-                        <span>2019-11-01</span>
+                        <span>2022-03-11</span>
                     </div>
                     <div class="user-info-list">
                         上次登录地点：
-                        <span>东莞</span>
+                        <span>成都</span>
                     </div>
                 </el-card>
                 <el-card shadow="hover" style="height:252px;">
@@ -124,7 +124,9 @@ export default {
         const name = localStorage.getItem("ms_username");
         const profile = localStorage.getItem("ms_userprofile")
         // const role = name === "admin" ? "超级管理员" : "普通用户";
-        const role = profile === "stu" ? "学生" : "普通用户";
+
+        const role = profile === "2" ? "学生" : (profile === "1"?"教师":"管理员");
+        console.log(role,profile);
 
         const data = reactive([
             {
