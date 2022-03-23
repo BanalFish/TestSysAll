@@ -162,6 +162,15 @@ export default {
       }
     )
 
+    axios
+      .get('http://localhost:8080/teacher/ques/list')
+      .then((res) => {
+        console.log('1111111111')
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
 
     const data = reactive([
       {
