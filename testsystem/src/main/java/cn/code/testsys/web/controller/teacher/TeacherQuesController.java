@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 //题库管理
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("/teacher")
 @Api(tags="教师题库管理")
@@ -38,10 +38,10 @@ public class TeacherQuesController {
     }
 
 
-    @GetMapping("/ques/input/{qId}")
+    @GetMapping("/ques/input")
     @ApiOperation(value="增加/修改题目到题库",notes = "如果增加则只返回所有课程，修改则返回原题目信息")
     @ApiImplicitParam(name = "qId",value="题目id",required = true,dataType = "Long",paramType ="path")
-    public DoubResult quesInput(@PathVariable("qId")Long qId){
+    public DoubResult quesInput(@RequestParam("qId")Long qId){
         DoubResult result=new DoubResult();
 
         if(qId!=null){
@@ -66,10 +66,10 @@ public class TeacherQuesController {
         return quesList();
     }
 
-    @DeleteMapping("/ques/delete/{qId}")
+    @DeleteMapping("/ques/delete")
     @ApiOperation(value="删除操作")
     @ApiImplicitParam(name = "qId",value="题目id",required = true,dataType = "Long",paramType ="path")
-    public String courDel(@PathVariable("qId")Long qId ){
+    public String courDel(@RequestParam("qId")Long qId ){
         iTeacherQuesMapper.delete(qId);
         return "删除成功";
     }
