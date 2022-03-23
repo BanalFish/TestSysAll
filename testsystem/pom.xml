@@ -49,17 +49,20 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.22</version>
       <scope>runtime</scope>
-    </dependency> <!-- 数据库连接池 -->
+    </dependency>
+    <!-- 数据库连接池 -->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>1.1.9</version>
-    </dependency> <!-- MyBatis 相关 -->
+    </dependency>
+    <!-- MyBatis 相关 -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>3.4.5</version>
-    </dependency> <!-- Spring 集成 MyBatis 的依赖 -->
+    </dependency>
+    <!-- Spring 集成 MyBatis 的依赖 -->
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
@@ -69,7 +72,8 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
       <version>1.7.25</version>
-    </dependency> <!-- Spring 相关 -->
+    </dependency>
+    <!-- Spring 相关 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
@@ -84,7 +88,8 @@
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>5.0.8.RELEASE</version>
-    </dependency> <!-- 测试相关 -->
+    </dependency>
+    <!-- 测试相关 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
@@ -96,7 +101,8 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-    </dependency> <!-- web 项目共用 -->
+    </dependency>
+    <!-- web 项目共用 -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -108,7 +114,8 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>4.0.1</version>
       <scope>provided</scope>
-    </dependency> <!-- 页面标签 -->
+    </dependency>
+    <!-- 页面标签 -->
     <dependency>
       <groupId>org.apache.taglibs</groupId>
       <artifactId>taglibs-standard-spec</artifactId>
