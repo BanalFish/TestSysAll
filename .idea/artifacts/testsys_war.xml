@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="testsys:war">
+    <output-path>$PROJECT_DIR$/testsystem/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>testsys</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="testsys-1.0.0.war">
+      <element id="artifact" artifact-name="testsys:war exploded" />
+    </root>
+  </artifact>
+</component>
