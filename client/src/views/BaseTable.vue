@@ -166,26 +166,26 @@ export default {
       // });
   
     // 
-    axios( {
-        url:"/teacher/ques/list",
-        params: {
-        "tn": "baiduimage",
-        "ps": 1,
-        "ct": 201326592,
-        "lm": -1,
-        "cl": 2,
-        "nc": 1,
-        "ie": "utf-8",
-        "dyTabStr": "MCwzLDEsMiw0LDYsNSw4LDcsOQ%3D%3D",
-        "word": "302+状态码",
-      },
-        dataType:"text",
-        contentType:'text',
-        processData:false
-      })
-      .then((res) => {
-        console.log(res);
-      });
+    // axios( {
+    //     url:"api/search/index",
+    //     params: {
+    //     "tn": "baiduimage",
+    //     "ps": 1,
+    //     "ct": 201326592,
+    //     "lm": -1,
+    //     "cl": 2,
+    //     "nc": 1,
+    //     "ie": "utf-8",
+    //     "dyTabStr": "MCwzLDEsMiw0LDYsNSw4LDcsOQ%3D%3D",
+    //     "word": "302+状态码",
+    //   },
+    //     dataType:"text",
+    //     contentType:'text',
+    //     processData:false
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   });
     
     // //请求当前点击的房间信息
     // axios.get("api/search/index", {

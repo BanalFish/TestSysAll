@@ -3,7 +3,8 @@ import {createStore} from 'vuex'
 export default createStore({
     state: {
         tagsList: [],
-        collapse: false
+        collapse: false,
+        numberArray:[],
     },
     mutations: {
         delTagsItem(state, data) {
@@ -49,6 +50,11 @@ export default createStore({
         // 侧边栏折叠
         handleCollapse(state, data) {
             state.collapse = data;
+        },
+
+        // 顶导航设置
+        setNumberArray(state,data){
+            state.numberArray = data;
         }
     },
     actions: {},
