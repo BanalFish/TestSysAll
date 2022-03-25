@@ -11,16 +11,24 @@ import Home3 from "../views/Home3.vue";
 const routes = [{
         path: '/',
         // redirect: '/dashboard
-        redirect: '/hello'
+        redirect: '/shouye'
     },
     {
         path: "/",
         name: "Home",
         component: Home,
         children: [{
-                path: '/hello',
-                name: 'Hello',
-                component: () => import( /* webpackChunkName: "login" */ "../components/HelloWorld.vue")
+                path: '/shouye',
+                name: 'Shouye',
+                component: () => import( /* webpackChunkName: "shouye" */ "../views/Shouye.vue")
+            },
+            {
+                path: '/user',
+                name: 'user',
+                meta: {
+                    title: '个人中心'
+                },
+                component: () => import( /* webpackChunkName: "user" */ '../views/User.vue')
             },
             {
                 path: '/test',
@@ -132,13 +140,6 @@ const routes = [{
                             title: '没有权限'
                         },
                         component: () => import( /* webpackChunkName: "403" */ '../views/403.vue')
-                    }, {
-                        path: '/peixun/user',
-                        name: 'user',
-                        meta: {
-                            title: '个人中心'
-                        },
-                        component: () => import( /* webpackChunkName: "user" */ '../views/User.vue')
                     }, {
                         path: '/peixun/editor',
                         name: 'editor',
