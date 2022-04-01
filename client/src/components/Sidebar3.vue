@@ -55,28 +55,73 @@ import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 export default {
   setup() {
-   
-    const items = [
-      {
-        icon: "el-icon-lx-home",
-        index: "/test/dashboard",
-        title: "系统首页",
-      },
-      {
-        icon: "el-icon-lx-cascades",
-        index: "/test/table",
-        title: "基础表格",
-      },
-      {
-        icon: "el-icon-lx-copy",
-        index: "/test/tabs",
-        title: "tab选项卡",
-      },
-    ];
     
+  
+    const  items= [
+      {
+        icon: "el-icon-lx-calendar",
+        index: "3",
+        title: "表单相关",
+        subs: [
+          {
+            index: "/peixun/form",
+            title: "基本表单",
+          },
+          {
+            index: "/peixun/upload",
+            title: "文件上传",
+          },
+          {
+            index: "4",
+            title: "三级菜单",
+            subs: [
+              {
+                index: "/peixun/editor",
+                title: "富文本编辑器",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        icon: "el-icon-lx-emoji",
+        index: "/peixun/icon",
+        title: "自定义图标",
+      },
+      {
+        icon: "el-icon-pie-chart",
+        index: "/peixun/charts",
+        title: "schart图表",
+      },
+      {
+        icon: "el-icon-lx-global",
+        index: "/peixun/i18n",
+        title: "国际化功能",
+      },
+      {
+        icon: "el-icon-lx-warn",
+        index: "7",
+        title: "错误处理",
+        subs: [
+          {
+            index: "/peixun/permission",
+            title: "权限测试",
+          },
+          {
+            index: "/peixun/404",
+            title: "404页面",
+          },
+        ],
+      },
+      // {
+      //     icon: "el-icon-lx-redpacket_fill",
+      //     index: "/donate",
+      //     title: "支持作者",
+      // },
+    ];
     const store = useStore();
     const route = useRoute();
- 
+   
     const onRoutes = computed(() => {
       // console.log(route.path,route.path.slice(1,5),150);
       return route.path;

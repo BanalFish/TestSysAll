@@ -77,20 +77,20 @@ export default {
     const param = reactive({
       username: "admin",
       password: "123123",
-      value:'2'
+      value:'stu'
     });
     // const value = ref("stu");
     const options = reactive([
       {
-        value: "2",
+        value: "stu",
         label: "学生",
       },
       {
-        value: "1",
+        value: "tea",
         label: "教师",
       },
       {
-        value: "0",
+        value: "adm",
         label: "管理员",
       },
     ]);
