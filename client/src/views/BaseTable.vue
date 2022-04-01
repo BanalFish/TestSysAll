@@ -124,7 +124,7 @@
 import { ref, reactive } from "vue";
 import { ElMessage, ElMessageBox } from "element-plus";
 import { fetchData } from "../api/index";
-import axios from 'axios';
+import axios from "axios";
 import request from "../utils/request";
 export default {
   name: "basetable",
@@ -164,66 +164,59 @@ export default {
       // }).then((res) => {
       //   console.log(res);
       // });
-  
-    // 
-    axios( {
-        url:"/teacher/ques/list",
-        params: {
-        "tn": "baiduimage",
-        "ps": 1,
-        "ct": 201326592,
-        "lm": -1,
-        "cl": 2,
-        "nc": 1,
-        "ie": "utf-8",
-        "dyTabStr": "MCwzLDEsMiw0LDYsNSw4LDcsOQ%3D%3D",
-        "word": "302+状态码",
-      },
-        dataType:"text",
-        contentType:'text',
-        processData:false
-      })
-      .then((res) => {
-        console.log(res);
-      });
+
+      //
+      axios( {
+          url:"http://localhost:8080/teacher/courList/",
+          params: {
+          "tId": "1",
+        },
+          dataType:"text",
+          contentType:'text',
+          processData:false
+        })
+        .then((res) => {
+          console.log(res);
+        });
+
     
-    // //请求当前点击的房间信息
-    // axios.get("api/search/index", {
-    //     params: {
-    //     "tn": "baiduimage",
-    //     "ps": 1,
-    //     "ct": 201326592,
-    //     "lm": -1,
-    //     "cl": 2,
-    //     "nc": 1,
-    //     "ie": "utf-8",
-    //     "dyTabStr": "MCwzLDEsMiw0LDYsNSw4LDcsOQ%3D%3D",
-    //     "word": "302+状态码",
-    //   }
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //   });
-    //   // //获取谁发布的房源
-    //    axios
-    //   .post("api/chosehouse1", {
-    //       ID: '99',
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //   });
 
-    // axios( {
-    //     url:"api/chosehouse1",
-    //     method:'post',
-    //     data: {
-    //       ID: '99'
-    //     }
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //   });
+      // //请求当前点击的房间信息
+      // axios.get("api/search/index", {
+      //     params: {
+      //     "tn": "baiduimage",
+      //     "ps": 1,
+      //     "ct": 201326592,
+      //     "lm": -1,
+      //     "cl": 2,
+      //     "nc": 1,
+      //     "ie": "utf-8",
+      //     "dyTabStr": "MCwzLDEsMiw0LDYsNSw4LDcsOQ%3D%3D",
+      //     "word": "302+状态码",
+      //   }
+      //   })
+      //   .then((res) => {
+      //     console.log(res);
+      //   });
+      //   // //获取谁发布的房源
+      //    axios
+      //   .post("api/chosehouse1", {
+      //       ID: '99',
+      //   })
+      //   .then((response) => {
+      //     console.log(response);
+      //   });
 
+      // axios( {
+      //     url:"api/chosehouse1",
+      //     method:'post',
+      //     data: {
+      //       ID: '99'
+      //     }
+      //   })
+      //   .then((response) => {
+      //     console.log(response);
+      //   });
     };
     getData();
 

@@ -21,5 +21,6 @@ public class Question {
     private Course course;
     @ApiModelProperty
     private int degree;//难易程度
+    private Answer answer;
 
 }

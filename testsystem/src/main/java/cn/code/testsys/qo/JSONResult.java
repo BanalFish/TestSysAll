@@ -1,18 +1,23 @@
 package cn.code.testsys.qo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
+import lombok.experimental.Accessors;
 
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class JSONResult {
+@Accessors(chain = true)//可以链式操作，默认是false
+@ApiModel(value="返回登录结果")
+public class JSONResult{
+
+	@ApiModelProperty(value="状态",required = true)
 	private boolean success = true;
+	@ApiModelProperty(value="信息",required = true)
 	private String msg = "成功";
-	private Object result;//成功之后返回给前台的数据
+	@ApiModelProperty(value="用户信息和权限",required = true)
+	private Object result;
 
 	public JSONResult(boolean success, String msg) {
 		this.success = success;

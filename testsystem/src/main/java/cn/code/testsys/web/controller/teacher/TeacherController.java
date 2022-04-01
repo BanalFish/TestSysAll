@@ -16,19 +16,4 @@ public class TeacherController {
         return "teacher/analysis/list";
     }
 
-
-    //试卷管理
-    @RequestMapping("/paper/list")
-    public String paperList(){
-        ModelAndView mv=new ModelAndView();
-        return "teacher/paper/list";
-    }
-
-
-    //考试管理
-    @RequestMapping("/test/list")
-    public String testList(){
-        ModelAndView mv=new ModelAndView();
-        return "teacher/test/list";
-    }
 }

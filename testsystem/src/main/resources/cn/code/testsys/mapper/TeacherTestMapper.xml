@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.code.testsys.mapper.TeacherTestMapper">
+
+    <resultMap id="testMapper" type="cn.code.testsys.domain.Test">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="startTime" property="startTime"/>
+        <result column="endTime" property="endTime"/>
+        <result column="status" property="status"/>
+        <collection property="testPaper" ofType="cn.code.testsys.domain.TestPaper">
+            <id column="paperID" property="id"/>
+            <result column="name" property="name"/>
+            <result column="status" property="status"/>
+            <result column="allAnswer" property="allAnswer"/>
+        </collection>
+        <collection property="course" ofType="cn.code.testsys.domain.Course">
+            <id column="id" property="id"/>
+            <result column="courName" property="name"/>
+            <result column="startDate" property="startDate"/>
+            <result column="count" property="count"/>
+        </collection>
+    </resultMap>
+
+    <select id="testListById" resultMap="testMapper" >
+        select test.*,course.*,course.`name` "courName" from
+            (course inner join user_cour on user_cour.courID=course.id and user_cour.userID=#{teachID})
+                inner join cour_test on cour_test.courID=user_cour.courID
+                inner JOIN test on cour_test.testID=test.id
+    </select>
+</mapper>

@@ -1,11 +1,9 @@
 package cn.code.testsys.domain;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Setter
-@Getter
+@Data
 public class TestPaper {
     private Long id;
     private String name;

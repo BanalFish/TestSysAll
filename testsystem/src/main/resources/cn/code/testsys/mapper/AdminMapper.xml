@@ -14,6 +14,11 @@
             <result column="startDate" property="startDate"/>
             <result column="count" property="count"/>
         </collection>
+        <collection property="answer" ofType="cn.code.testsys.domain.Answer">
+            <id column="id" property="id"/>
+            <result column="answer" property="answer"/>
+            <result column="isTrue" property="isTrue"/>
+        </collection>
 
     </resultMap>
 
@@ -22,13 +27,15 @@
     </select>
 
     <select id="selectQues" resultMap="queMapper">
-        select ques.*,course.* from ques,course
-        where ques.courID=course.id
+        select ques.*,course.*,answer.* from (course inner join ques
+            on ques.courID=course.id )
+            left join answer on ques.id=answer.queID
     </select>
 
     <select id="selectByQueId" resultMap="queMapper">
-        select ques.*,course.* from ques,course
-        where ques.courID=course.id and ques.id=#{queId}
+        select ques.*,course.*,answer.* from (course inner join ques
+            on ques.courID=course.id and ques.id=#{queId})
+                                                 left join answer on ques.id=answer.queID
     </select>
 
 </mapper>

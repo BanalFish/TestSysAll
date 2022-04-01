@@ -13,7 +13,7 @@ public interface AdminMapper {
     List<Course> selectCour();
 
     /**
-     * 返回全部题目
+     * 返回全部题目及答案
      * @return
      */
     List<Question> selectQues();

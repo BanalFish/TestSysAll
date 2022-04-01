@@ -74,7 +74,7 @@
             <div class="clearfix">
               <span>待办事项</span>
               <el-button style="float: right; padding: 3px 0" type="text"
-                >添加</el-button
+              >添加</el-button
               >
             </div>
           </template>
@@ -88,8 +88,8 @@
             <el-table-column>
               <template #default="scope">
                 <div
-                  class="todo-item"
-                  :class="{
+                    class="todo-item"
+                    :class="{
                     'todo-item-del': scope.row.status,
                   }"
                 >
@@ -111,20 +111,20 @@
       <el-col :span="12">
         <el-card shadow="hover">
           <schart
-            ref="bar"
-            class="schart"
-            canvasId="bar"
-            :options="options"
+              ref="bar"
+              class="schart"
+              canvasId="bar"
+              :options="options"
           ></schart>
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card shadow="hover">
           <schart
-            ref="line"
-            class="schart"
-            canvasId="line"
-            :options="options2"
+              ref="line"
+              class="schart"
+              canvasId="line"
+              :options="options2"
           ></schart>
         </el-card>
       </el-col>
@@ -148,20 +148,28 @@ export default {
     console.log(role, profile)
 
     axios.interceptors.request.use(
-      (config) => {
-        //想做的一些操作
-        //eg:1.给请求添加token
-        //eg:2.isLoading动画
-        console.log('请求成功的拦截')
-        console.log(config)
-        return config
-      },
-      (err) => {
-        console.log('请求发送错误')
-        return err
-      }
+        (config) => {
+          //想做的一些操作
+          //eg:1.给请求添加token
+          //eg:2.isLoading动画
+          console.log('请求成功的拦截')
+          console.log(config)
+          return config
+        },
+        (err) => {
+          console.log('请求发送错误')
+          return err
+        }
     )
 
+    axios
+        .get('http://localhost:8080/teacher/ques/list')
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
 
     const data = reactive([
       {

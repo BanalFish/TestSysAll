@@ -1,12 +1,10 @@
 package cn.code.testsys.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.Date;
 
-@Setter
-@Getter
+@Data
 public class Test {
     private Long id;
     private String name;
@@ -14,4 +12,5 @@ public class Test {
     private Date startTime;
     private Date endTime;
     private int status;
+    private Course course;
 }

@@ -1,11 +1,13 @@
 package cn.code.testsys.config;
 
+import lombok.Data;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+@Data
 public class SimpleCORSFilter implements Filter {
 
     private boolean isCross = false;

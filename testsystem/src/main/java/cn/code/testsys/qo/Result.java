@@ -6,13 +6,14 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.List;
 
 @Data  //getter和setter函数
 @AllArgsConstructor //全参构造
-@NoArgsConstructor   //无参构造
+@NoArgsConstructor  //无参构造
 @Accessors(chain = true)//可以链式操作，默认是false
 @ApiModel(value = "返回结果模型")
 public class Result<T>{
@@ -22,4 +23,6 @@ public class Result<T>{
     private String message;  //信息
     @ApiModelProperty(value="主数据",required = true)
     private T data;
+
+
 }

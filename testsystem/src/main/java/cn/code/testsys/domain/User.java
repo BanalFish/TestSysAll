@@ -1,31 +1,26 @@
 package cn.code.testsys.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
 
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements java.io.Serializable{//接口可去掉，但是会报不影响运行但是看着不舒服的错
+@ApiModel(value="用户对象")
+public class User {
+
+    @ApiModelProperty
     private Long id;
+    @ApiModelProperty
     private String number;
+    @ApiModelProperty
     private String name;
+    @ApiModelProperty
     private String password;
+    @ApiModelProperty
     private int dep;
+    @ApiModelProperty
     private int who;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", number='" + number + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", dep=" + dep +
-                ", who=" + who +
-                '}';
-    }
 }
