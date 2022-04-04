@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class TeacherTestController {
 
     @GetMapping("/test/list")
     @ApiOperation(value="展示该教师所有考试")
-    public Result<Question> quesList(@RequestParam("teachID") Long teachID){
+    public Result<Test> quesList(@RequestParam("teachID") Long teachID){
         List<Test> tests = testService.testListById(teachID);
         return new Result().setCode(200).setMessage("查询考试成功").setData(tests);
     }

@@ -27,5 +27,13 @@
             (course inner join user_cour on user_cour.courID=course.id and user_cour.userID=#{teachID})
                 inner join cour_test on cour_test.courID=user_cour.courID
                 inner JOIN test on cour_test.testID=test.id
+                inner join testpaper on test.paperID=testpaper.id
+    </select>
+
+    <select id="getPaperIds" resultType="long">
+        select test.paperID from
+            (course inner join user_cour on user_cour.courID=course.id and user_cour.userID=#{teachID})
+                inner join cour_test on cour_test.courID=user_cour.courID
+                inner JOIN test on cour_test.testID=test.id
     </select>
 </mapper>

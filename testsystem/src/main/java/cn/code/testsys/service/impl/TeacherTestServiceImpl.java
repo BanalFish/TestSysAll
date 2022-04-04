@@ -18,4 +18,9 @@ public class TeacherTestServiceImpl implements ITeacherTestService {
     public List<Test> testListById(Long teachID) {
         return teacherTestMapper.testListById(teachID);
     }
+
+    @Override
+    public List<Long> getPaperIds(Long teachID) {
+        return teacherTestMapper.getPaperIds(teachID);
+    }
 }

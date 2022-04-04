@@ -7,4 +7,6 @@ import java.util.List;
 public interface ITeacherTestService {
 
     List<Test> testListById(Long teachID);
+
+    List<Long> getPaperIds(Long teachID);
 }

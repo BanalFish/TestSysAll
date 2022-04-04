@@ -13,4 +13,11 @@ public interface TeacherTestMapper {
      * @return
      */
     List<Test> testListById(Long teachID);
+
+    /**
+     * 返回该教师所有试卷的ID
+     * @param teachID
+     * @return
+     */
+    List<Long> getPaperIds(Long teachID);
 }
