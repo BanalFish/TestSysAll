@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="shouye">
     <el-row type="flex" justify="center">
       <el-col :span="23">
         <div class="grid-content tou">
@@ -291,7 +291,7 @@
               </div>
             </div>
             <a target="_blank" href="https://www.kaoshiyun.com.cn/help">
-                 <div class="chevron-box">更多</div>
+              <div class="chevron-box">更多</div>
             </a>
           </div>
         </div>
@@ -300,43 +300,368 @@
 
     <el-row type="flex" justify="center">
       <el-col :span="23">
-          <!-- 这个不知道什么用 -->
+        <!-- 这个不知道什么用 -->
         <div class="grid-content bg-purple-dark">
-            <div class="row no-gutters boxC-stely pdt20">
-               <div id="divContainer" data-highcharts-chart="0"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 1700px; height: 280px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif; font-size: 12px;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1700" height="280"><desc>Created with Highcharts 3.0.2</desc><defs><clipPath id="highcharts-1"><rect fill="none" x="0" y="0" width="1637" height="219"></rect></clipPath></defs><rect rx="5" ry="5" fill="#FFFFFF" x="0" y="0" width="1700" height="280"></rect><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 410121.75 10 L 410121.75 230" stroke="#f0f0f0" stroke-width="0.5" zIndex="1" opacity="1"></path></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 53 120.25 L 1690 120.25" stroke="#e0e0e0" stroke-width="0.5" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 410121.5 230 L 410121.5 235" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 53 229.5 L 1690 229.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"><text x="28.03125" y="120" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#4d759e;font-weight:bold;fill:#4d759e;" zIndex="7" text-anchor="middle" transform="translate(0,0) rotate(270 28.03125 120)" visibility="visible"><tspan x="28.03125">参加人次</tspan></text></g><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(53,10) scale(1 1)" clip-path="url(#highcharts-1)"></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(53,10) scale(1 1)" clip-path="none"><path fill="#3399fe" d="M 818.5 106 C 823.828 106 823.828 114 818.5 114 C 813.172 114 813.172 106 818.5 106 Z"></path><path fill="none" d="M 808.5 110 L 828.5 110" class="highcharts-tracker highcharts-tracker" stroke-linejoin="round" visibility="visible" stroke-opacity="0.0001" stroke="rgb(192,192,192)" stroke-width="22" zIndex="2" style=""></path></g></g><g class="highcharts-legend" zIndex="7" transform="translate(1578,110)"><g zIndex="1"><g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,3)"><path fill="none" d="M 0 11 L 16 11" stroke="#3399fe" stroke-width="2"></path><path fill="#3399fe" d="M 8 7 C 13.328 7 13.328 15 8 15 C 2.6719999999999997 15 2.6719999999999997 7 8 7 Z"></path><text x="21" y="15" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;cursor:pointer;color:#274b6d;fill:#274b6d;" text-anchor="start" zIndex="2"><tspan x="21">日参加量情况</tspan></text></g></g></g></g><g class="highcharts-axis-labels" zIndex="7"><text x="871.5" y="244" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:1617px;color:#666;cursor:default;line-height:14px;fill:#666;" text-anchor="middle" opacity="1"><tspan x="871.5">03-24</tspan></text></g><g class="highcharts-axis-labels" zIndex="7"><text x="45" y="124.09999999999388" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:11px;width:799px;color:#666;cursor:default;line-height:14px;fill:#666;" text-anchor="end" opacity="1"><tspan x="45">1</tspan></text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" visibility="hidden" transform="translate(0,0)"><rect rx="3" ry="3" fill="none" x="0.5" y="0.5" width="16" height="16" fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></rect><rect rx="3" ry="3" fill="none" x="0.5" y="0.5" width="16" height="16" fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></rect><rect rx="3" ry="3" fill="none" x="0.5" y="0.5" width="16" height="16" fill-opacity="0.85" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></rect><rect rx="3" ry="3" fill="rgb(255,255,255)" x="0.5" y="0.5" width="16" height="16" fill-opacity="0.85"></rect><text x="8" y="21" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#333333;fill:#333333;" zIndex="1"></text></g><text x="1690" y="275" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Verdana, Arial, Helvetica, sans-serif;font-size:9px;cursor:pointer;color:#909090;fill:#909090;" text-anchor="end" zIndex="8"></text></svg></div></div>
+          <div class="row no-gutters boxC-stely pdt20">
+            <div id="divContainer" data-highcharts-chart="0">
+              <div
+                class="highcharts-container"
+                id="highcharts-0"
+                style="
+                  position: relative;
+                  overflow: hidden;
+                  width: 1700px;
+                  height: 280px;
+                  text-align: left;
+                  line-height: normal;
+                  z-index: 0;
+                  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana,
+                    Arial, Helvetica, sans-serif;
+                  font-size: 12px;
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  width="1700"
+                  height="280"
+                >
+                  <desc>Created with Highcharts 3.0.2</desc>
+                  <defs>
+                    <clipPath id="highcharts-1">
+                      <rect
+                        fill="none"
+                        x="0"
+                        y="0"
+                        width="1637"
+                        height="219"
+                      ></rect>
+                    </clipPath>
+                  </defs>
+                  <rect
+                    rx="5"
+                    ry="5"
+                    fill="#FFFFFF"
+                    x="0"
+                    y="0"
+                    width="1700"
+                    height="280"
+                  ></rect>
+                  <g class="highcharts-grid" zIndex="1">
+                    <path
+                      fill="none"
+                      d="M 410121.75 10 L 410121.75 230"
+                      stroke="#f0f0f0"
+                      stroke-width="0.5"
+                      zIndex="1"
+                      opacity="1"
+                    ></path>
+                  </g>
+                  <g class="highcharts-grid" zIndex="1">
+                    <path
+                      fill="none"
+                      d="M 53 120.25 L 1690 120.25"
+                      stroke="#e0e0e0"
+                      stroke-width="0.5"
+                      zIndex="1"
+                      opacity="1"
+                    ></path>
+                  </g>
+                  <g class="highcharts-axis" zIndex="2">
+                    <path
+                      fill="none"
+                      d="M 410121.5 230 L 410121.5 235"
+                      stroke="#C0D0E0"
+                      stroke-width="1"
+                      opacity="1"
+                    ></path>
+                    <path
+                      fill="none"
+                      d="M 53 229.5 L 1690 229.5"
+                      stroke="#C0D0E0"
+                      stroke-width="1"
+                      zIndex="7"
+                      visibility="visible"
+                    ></path>
+                  </g>
+                  <g class="highcharts-axis" zIndex="2">
+                    <text
+                      x="28.03125"
+                      y="120"
+                      style="
+                        font-family: 'Lucida Grande', 'Lucida Sans Unicode',
+                          Verdana, Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        color: #4d759e;
+                        font-weight: bold;
+                        fill: #4d759e;
+                      "
+                      zIndex="7"
+                      text-anchor="middle"
+                      transform="translate(0,0) rotate(270 28.03125 120)"
+                      visibility="visible"
+                    >
+                      <tspan x="28.03125">参加人次</tspan>
+                    </text>
+                  </g>
+                  <g class="highcharts-series-group" zIndex="3">
+                    <g
+                      class="highcharts-series"
+                      visibility="visible"
+                      zIndex="0.1"
+                      transform="translate(53,10) scale(1 1)"
+                      clip-path="url(#highcharts-1)"
+                    ></g>
+                    <g
+                      class="highcharts-markers"
+                      visibility="visible"
+                      zIndex="0.1"
+                      transform="translate(53,10) scale(1 1)"
+                      clip-path="none"
+                    >
+                      <path
+                        fill="#3399fe"
+                        d="M 818.5 106 C 823.828 106 823.828 114 818.5 114 C 813.172 114 813.172 106 818.5 106 Z"
+                      ></path>
+                      <path
+                        fill="none"
+                        d="M 808.5 110 L 828.5 110"
+                        class="highcharts-tracker highcharts-tracker"
+                        stroke-linejoin="round"
+                        visibility="visible"
+                        stroke-opacity="0.0001"
+                        stroke="rgb(192,192,192)"
+                        stroke-width="22"
+                        zIndex="2"
+                        style=""
+                      ></path>
+                    </g>
+                  </g>
+                  <g
+                    class="highcharts-legend"
+                    zIndex="7"
+                    transform="translate(1578,110)"
+                  >
+                    <g zIndex="1">
+                      <g>
+                        <g
+                          class="highcharts-legend-item"
+                          zIndex="1"
+                          transform="translate(8,3)"
+                        >
+                          <path
+                            fill="none"
+                            d="M 0 11 L 16 11"
+                            stroke="#3399fe"
+                            stroke-width="2"
+                          ></path>
+                          <path
+                            fill="#3399fe"
+                            d="M 8 7 C 13.328 7 13.328 15 8 15 C 2.6719999999999997 15 2.6719999999999997 7 8 7 Z"
+                          ></path>
+                          <text
+                            x="21"
+                            y="15"
+                            style="
+                              font-family: 'Lucida Grande',
+                                'Lucida Sans Unicode', Verdana, Arial, Helvetica,
+                                sans-serif;
+                              font-size: 12px;
+                              cursor: pointer;
+                              color: #274b6d;
+                              fill: #274b6d;
+                            "
+                            text-anchor="start"
+                            zIndex="2"
+                          >
+                            <tspan x="21">日参加量情况</tspan>
+                          </text>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                  <g class="highcharts-axis-labels" zIndex="7">
+                    <text
+                      x="871.5"
+                      y="244"
+                      style="
+                        font-family: 'Lucida Grande', 'Lucida Sans Unicode',
+                          Verdana, Arial, Helvetica, sans-serif;
+                        font-size: 11px;
+                        width: 1617px;
+                        color: #666;
+                        cursor: default;
+                        line-height: 14px;
+                        fill: #666;
+                      "
+                      text-anchor="middle"
+                      opacity="1"
+                    >
+                      <tspan x="871.5">03-24</tspan>
+                    </text>
+                  </g>
+                  <g class="highcharts-axis-labels" zIndex="7">
+                    <text
+                      x="45"
+                      y="124.09999999999388"
+                      style="
+                        font-family: 'Lucida Grande', 'Lucida Sans Unicode',
+                          Verdana, Arial, Helvetica, sans-serif;
+                        font-size: 11px;
+                        width: 799px;
+                        color: #666;
+                        cursor: default;
+                        line-height: 14px;
+                        fill: #666;
+                      "
+                      text-anchor="end"
+                      opacity="1"
+                    >
+                      <tspan x="45">1</tspan>
+                    </text>
+                  </g>
+                  <g
+                    class="highcharts-tooltip"
+                    zIndex="8"
+                    style="cursor: default; padding: 0; white-space: nowrap"
+                    visibility="hidden"
+                    transform="translate(0,0)"
+                  >
+                    <rect
+                      rx="3"
+                      ry="3"
+                      fill="none"
+                      x="0.5"
+                      y="0.5"
+                      width="16"
+                      height="16"
+                      fill-opacity="0.85"
+                      isShadow="true"
+                      stroke="black"
+                      stroke-opacity="0.049999999999999996"
+                      stroke-width="5"
+                      transform="translate(1, 1)"
+                    ></rect>
+                    <rect
+                      rx="3"
+                      ry="3"
+                      fill="none"
+                      x="0.5"
+                      y="0.5"
+                      width="16"
+                      height="16"
+                      fill-opacity="0.85"
+                      isShadow="true"
+                      stroke="black"
+                      stroke-opacity="0.09999999999999999"
+                      stroke-width="3"
+                      transform="translate(1, 1)"
+                    ></rect>
+                    <rect
+                      rx="3"
+                      ry="3"
+                      fill="none"
+                      x="0.5"
+                      y="0.5"
+                      width="16"
+                      height="16"
+                      fill-opacity="0.85"
+                      isShadow="true"
+                      stroke="black"
+                      stroke-opacity="0.15"
+                      stroke-width="1"
+                      transform="translate(1, 1)"
+                    ></rect>
+                    <rect
+                      rx="3"
+                      ry="3"
+                      fill="rgb(255,255,255)"
+                      x="0.5"
+                      y="0.5"
+                      width="16"
+                      height="16"
+                      fill-opacity="0.85"
+                    ></rect>
+                    <text
+                      x="8"
+                      y="21"
+                      style="
+                        font-family: 'Lucida Grande', 'Lucida Sans Unicode',
+                          Verdana, Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        color: #333333;
+                        fill: #333333;
+                      "
+                      zIndex="1"
+                    ></text>
+                  </g>
+                  <text
+                    x="1690"
+                    y="275"
+                    style="
+                      font-family: 'Lucida Grande', 'Lucida Sans Unicode',
+                        Verdana, Arial, Helvetica, sans-serif;
+                      font-size: 9px;
+                      cursor: pointer;
+                      color: #909090;
+                      fill: #909090;
+                    "
+                    text-anchor="end"
+                    zIndex="8"
+                  ></text>
+                </svg>
+              </div>
             </div>
+          </div>
         </div>
       </el-col>
     </el-row>
+    <!-- <div class="xitong"  v-model:visible="visible"> -->
+    <div class="xitong" v-show="visible" @click="handleshow">
+      <div class="tanchuang" id="app2">
+        <h1>系统公告</h1>
+        <!-- <iframe
+          :src="ifsrc"
+          style="width: 100%; height: 100%"
+        ></iframe> -->
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Schart from "vue-schart";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { ElMessage, ElMessageBox } from "element-plus";
 export default {
   name: "shouye",
   components: { Schart },
   setup() {
+    const visible = ref(false);
+    //  const ifsrc = ref('static/fangjia.html');
     const name = localStorage.getItem("ms_username");
     // const profile = localStorage.getItem("ms_userprofile");
     const items = [
       {
         title: "2022年春节放假通知",
         date: "01-27",
+        src: "static/fangjia.html",
       },
       {
         title: "2022年春节放假通知",
         date: "01-27",
+        src: "static/test.html",
       },
       {
         title: "2022年春节放假通知",
         date: "01-27",
+        src: "static/fangjia.html",
       },
       {
         title: "2022年春节放假通知",
         date: "01-27",
+        src: "static/fangjia.html",
       },
     ];
     const handlethis = () => {
@@ -349,22 +674,70 @@ export default {
       return null;
     };
     const handleClick = (item) => {
-      console.log(item);
+      //   console.log(item);
+      var dom = document.querySelector("#app2");
+      var iframe = document.createElement("iframe");
+      var reiframe = document.querySelector("iframe");
+      //   console.log(reiframe);
+      reiframe ? dom.removeChild(reiframe) : null;
+      //   console.log(dom,iframe);
+
+      iframe.src = item.src;
+      iframe.style.width = "100%";
+      iframe.style.height = "90%";
+
+      dom.appendChild(iframe);
+      //    ifsrc.value = item.src;
+      visible.value = true;
+    };
+    const handleshow = () => {
+      visible.value = false;
     };
 
     return {
+      visible,
       activeName,
       name,
       items,
       format,
       handlethis,
       handleClick,
+      handleshow,
     };
   },
 };
 </script>
 
 <style scoped lang='scss'>
+.xitong {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: #666666c7;
+
+  .tanchuang {
+    padding: 4px;
+    border-radius: 5px;
+    width: 60%;
+    height: 600px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -30%;
+    h1 {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 38px;
+      color: #5a5a5a;
+      border-bottom: 1px solid #666666;
+    }
+  }
+}
 .card {
   width: 400px;
   // height: 120px;
@@ -596,21 +969,21 @@ export default {
       }
     }
     .chevron-box {
-    position: absolute;
-    box-sizing: border-box;
-    bottom: 0px;
-    left: 50%;
-    margin-left: -30px;
-    padding: 0px 10px;
-    font-size: 14px;
-    text-align: center;
-    background-color: #d3d1d1;
-    color: aliceblue;
-    width: 60px;
-    height: 20px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
+      position: absolute;
+      box-sizing: border-box;
+      bottom: 0px;
+      left: 50%;
+      margin-left: -30px;
+      padding: 0px 10px;
+      font-size: 14px;
+      text-align: center;
+      background-color: #d3d1d1;
+      color: aliceblue;
+      width: 60px;
+      height: 20px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
   }
 }
 </style>
