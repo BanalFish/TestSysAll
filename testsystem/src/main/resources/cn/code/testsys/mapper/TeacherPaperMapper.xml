@@ -6,6 +6,7 @@
 
     <resultMap id="outTestPaper" type="cn.code.testsys.domain.outDTO.OutPaper">
         <id column="paperID" property="paperID"/>
+        <result column="status" property="status"/>
         <collection property="outQuestions" ofType="cn.code.testsys.domain.outDTO.outQuestion">
             <id column="id" property="queID"/>
             <result column="problem" property="problem"/>
@@ -18,7 +19,7 @@
     </resultMap>
 
     <select id="paperList" resultMap="outTestPaper" parameterType="long">
-        select paperID,ques.*,course.`name` "courName",answer.answer from
+        select paperID,`status`,ques.*,course.`name` "courName",answer.answer from
             (ques inner join paper_ques on paper_ques.queID=ques.id
                 and paper_ques.paperID in
 
@@ -30,5 +31,6 @@
                 )
                 left JOIN answer on answer.queID=ques.id and answer.isTrue=1
                 left join course on ques.courID=course.id
+                left join testpaper on testpaper.id=paper_ques.paperID
     </select>
 </mapper>

@@ -9,6 +9,7 @@ import java.util.List;
 public class OutPaper {
 
     private Long paperID;
+    private int status;
     private List<outQuestion> outQuestions;
 }
 @Data
