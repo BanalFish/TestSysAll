@@ -17,21 +17,26 @@ public class LoginController {
     @PostMapping("/userLogin")
     @ApiOperation(value="用户登录")
     public JSONResult userlogin(@RequestParam("username")String username, @RequestParam("password") String password){
-
-        int who=0;//返回登录用户的身份状态
+        UsernamePasswordToken usernamePasswordToken= new UsernamePasswordToken(username, password);
+        Subject subject =SecurityUtils.getSubject();
+        User principal =(User) subject.getPrincipal();
 
         try {
-            UsernamePasswordToken usernamePasswordToken= new UsernamePasswordToken(username, password);
-            Subject subject =SecurityUtils.getSubject();
             subject.login(usernamePasswordToken);
-            User principal =(User) subject.getPrincipal();
-            who= principal.getWho();
         }catch (AuthenticationException e){
             e.printStackTrace();
             return new JSONResult(false,"fail");
         }
 
-        return new JSONResult(true,"success",who);
+        User user=new User();
+        user.setId(principal.getId());
+        user.setDep(principal.getDep());
+        user.setName(principal.getName());
+        user.setNumber(principal.getNumber());
+        user.setPassword(principal.getPassword());
+        user.setWho(principal.getWho());
+
+        return new JSONResult(true,"success",user);
 
     }
 

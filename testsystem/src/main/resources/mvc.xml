@@ -29,6 +29,12 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
+    <bean id="formAuthenticationFilter" class="cn.code.testsys.web.filter.UserAuthenticationFilter">
+        <property name="usernameParam" value="username" />
+        <property name="passwordParam" value="password" />
+    </bean>
+
     <!-- 将 springSwaggerConfig加载到spring容器 -->
     <!-- 将自定义的swagger配置类加载到spring容器 -->
     <bean class="cn.code.testsys.config.SwaggerConfig"/>

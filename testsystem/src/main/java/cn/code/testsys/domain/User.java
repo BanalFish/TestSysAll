@@ -4,11 +4,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ApiModel(value="用户对象")
-public class User {
+public class User implements Serializable {
 
     @ApiModelProperty
     private Long id;
