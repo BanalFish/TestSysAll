@@ -8,8 +8,8 @@
       >  -->
     <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">
-        <i :class="`el-icon-lx-homefill`"></i
-      ></el-menu-item>
+        <i :class="`el-icon-lx-homefill`"></i>
+      </el-menu-item>
       <el-menu-item index="2">考试</el-menu-item>
       <el-menu-item index="3">培训</el-menu-item>
       <el-menu-item index="4">资源</el-menu-item>
@@ -67,6 +67,10 @@ export default {
         case "3":
           store.commit("clearTags");
           router.push("/peixun");
+          break;
+        case "4":
+          store.commit("clearTags");
+          router.push("/ziyuan");
           break;
         default:
           console.log(key, keyPath);
