@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.code.testsys.mapper.TeacherQuesMapper">
 
+    <select id="seleQuesByPId" resultType="cn.code.testsys.domain.Question">
+        select ques.*,course.name,answer.answer from (
+                      paper_ques INNER join ques on ques.id=paper_ques.queID and paperID=#{pId})
+                      left join course on ques.courID=course.id
+                      right join answer on answer.queID=ques.id
+    </select>
+
 
     <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into ques(problem,score,type,courID,degree)

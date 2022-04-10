@@ -3,6 +3,8 @@ package cn.code.testsys.service;
 import cn.code.testsys.domain.Course;
 import cn.code.testsys.qo.CourseQueryObject;
 import cn.code.testsys.qo.PageResult;
+import cn.code.testsys.qo.Result;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -16,4 +18,6 @@ public interface ITeacherCourseService {
     void addCourse(Course course,Long teacherID);
 
     List<Course> selectByUser(Long id);
+
+    void addStu2Cour(Long[] stuIds, Long cId);
 }

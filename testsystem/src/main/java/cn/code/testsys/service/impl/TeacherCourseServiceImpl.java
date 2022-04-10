@@ -42,11 +42,17 @@ public class TeacherCourseServiceImpl implements ITeacherCourseService {
     @Override
     public void addCourse(Course course,Long teacherID) {
         teacherCourseMapper.insert(course);
-        teacherCourseMapper.addTeachAndCourse(course.getId(), teacherID);
+        teacherCourseMapper.addUserAndCourse(course.getId(), teacherID);
     }
 
     @Override
     public List<Course> selectByUser(Long id) {
         return teacherCourseMapper.selectByUser(id);
+    }
+
+    @Override
+    public void addStu2Cour(Long[] stuIds, Long cId) {
+        teacherCourseMapper.addStu2Cour(cId);
+        teacherCourseMapper.addUsersAndCourse(stuIds,cId);
     }
 }

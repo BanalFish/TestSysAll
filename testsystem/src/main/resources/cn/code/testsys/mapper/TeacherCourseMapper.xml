@@ -30,8 +30,21 @@
         values(#{name},#{startDate},#{count})
     </insert>
 
-    <insert id="addTeachAndCourse" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    <insert id="addUserAndCourse" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into user_cour(userID,courID)
         values(#{teacherID},#{courID})
+    </insert>
+
+    <update id="addStu2Cour">
+        update course set count=count+1 where id=#{cID}
+    </update>
+
+    <insert id="addUsersAndCourse" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        <foreach collection="array" item="userID" index="index"
+                 open="(" close=")" separator=",">
+            insert into user_cour(userID,courID)
+            values(#{userID},#{cId})
+        </foreach>
+
     </insert>
 </mapper>

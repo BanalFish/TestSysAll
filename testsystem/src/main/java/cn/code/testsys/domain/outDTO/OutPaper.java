@@ -1,6 +1,5 @@
 package cn.code.testsys.domain.outDTO;
 
-import cn.code.testsys.domain.Question;
 import lombok.Data;
 
 import java.util.List;
@@ -21,4 +20,5 @@ class outQuestion{
     private String courName;
     private int degree;
     private String answer;
+    private int isTrue;
 }

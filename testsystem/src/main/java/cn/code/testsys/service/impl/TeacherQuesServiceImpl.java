@@ -7,12 +7,19 @@ import cn.code.testsys.service.ITeacherQuesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class TeacherQuesServiceImpl implements ITeacherQuesService {
 
     @Autowired
     private TeacherQuesMapper teacherQuesMapper;
+
+    @Override
+    public List<Question> seleQuesByPId(Long pId) {
+        return teacherQuesMapper.seleQuesByPId(pId);
+    }
 
     @Override
     public void insert(Question question, Answer answer) {

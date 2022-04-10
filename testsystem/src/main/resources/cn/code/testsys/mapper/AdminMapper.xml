@@ -34,8 +34,25 @@
 
     <select id="selectByQueId" resultMap="queMapper">
         select ques.*,course.*,answer.* from (course inner join ques
-            on ques.courID=course.id and ques.id=#{queId})
-                                                 left join answer on ques.id=answer.queID
+        on ques.courID=course.id and ques.id in
+        <foreach collection="array" item="queId" index="index"
+                 open="(" close=")" separator=",">
+            #{queId}
+        </foreach>
+        )
+        left join answer on ques.id=answer.queID
+    </select>
+
+    <select id="searchByName" resultType="cn.code.testsys.domain.Course">
+        select * from course where name like '%#{name}%'
+    </select>
+
+    <select id="getAllTeach" resultType="cn.code.testsys.domain.User">
+        select * from user where who=1
+    </select>
+
+    <select id="getAllStu" resultType="cn.code.testsys.domain.User">
+        select * from user where who=2
     </select>
 
 </mapper>

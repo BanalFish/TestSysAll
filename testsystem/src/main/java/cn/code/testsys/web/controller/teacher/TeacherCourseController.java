@@ -27,7 +27,6 @@ public class TeacherCourseController {
         return new Result().setCode(200).setData(courses).setMessage("查询成功");
     }
 
-
     @PostMapping("/course/add")
     @ApiOperation(value = "教师添加课程")
     @ApiImplicitParam(name = "tId",value="教师id",required = true,dataType = "Long",paramType ="path")
@@ -40,14 +39,18 @@ public class TeacherCourseController {
 
 
     @ApiOperation(value="教师根据id删除课程")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "cId",value = "课程id",required = true,dataType = "Long",paramType ="path"),
-            @ApiImplicitParam(name = "tId",value="教师id",required = true,dataType = "Long",paramType ="path")
-    })
     @DeleteMapping(value = "/course/delete")
-    public String courDel(@RequestParam("tId")Long tId,@RequestParam("cId")Long cId){
+    public Result courDel(@RequestParam("tId")Long tId,@RequestParam("cId")Long cId){
         teacherCourseService.delete(cId,tId);
-        return "删除成功";
+        return new Result().setCode(200).setMessage("删除成功");
     }
+
+    @ApiOperation(value="教师通过学生Id将其添加到某课程或者学生主动加入课程")
+    @DeleteMapping(value = "/course/join")
+    public Result addStu2Cour(@RequestParam("stuIds")Long[] stuIds,@RequestParam("cId")Long cId){
+        teacherCourseService.addStu2Cour(stuIds,cId);
+        return new Result().setCode(200).setMessage("加入课程成功");
+    }
+
 
 }

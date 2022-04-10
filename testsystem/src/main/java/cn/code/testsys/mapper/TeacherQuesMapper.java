@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface TeacherQuesMapper {
 
+    //根据试卷Id返回包含的题目
+    List<Question> seleQuesByPId(Long pId);
 
     /**
      * 新增题目信息

@@ -15,22 +15,36 @@
             <result column="courName" property="courName"/>
             <result column="degree" property="degree"/>
             <result column="answer" property="answer"/>
+            <result column="isTrue" property="isTrue"/>
         </collection>
     </resultMap>
 
     <select id="paperList" resultMap="outTestPaper" parameterType="long">
-        select paperID,`status`,ques.*,course.`name` "courName",answer.answer from
+        select paperID,`status`,ques.*,course.`name` "courName",answer.answer,answer.isTrue from
             (ques inner join paper_ques on paper_ques.queID=ques.id
                 and paper_ques.paperID in
 
-                <foreach collection="list" item="paperID" index="idex"
+                <foreach collection="list" item="paperID" index="index"
                          open="(" close=")" separator=",">
                     #{paperID}
                 </foreach>
 
                 )
-                left JOIN answer on answer.queID=ques.id and answer.isTrue=1
+                left JOIN answer on answer.queID=ques.id
                 left join course on ques.courID=course.id
                 left join testpaper on testpaper.id=paper_ques.paperID
     </select>
+
+    <select id="selePaperById" resultMap="outTestPaper" parameterType="long">
+        select paperID,`status`,ques.*,course.`name` "courName",answer.answer from
+        (ques inner join paper_ques on paper_ques.queID=ques.id
+        and paper_ques.paperID =#{pId})
+        left JOIN answer on answer.queID=ques.id and answer.isTrue=1
+        left join course on ques.courID=course.id
+        left join testpaper on testpaper.id=paper_ques.paperID
+    </select>
+
+    <insert id="paperInput" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+
+    </insert>
 </mapper>

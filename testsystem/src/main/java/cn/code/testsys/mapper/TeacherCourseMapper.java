@@ -3,6 +3,7 @@ package cn.code.testsys.mapper;
 import cn.code.testsys.domain.Course;
 import cn.code.testsys.qo.CourseQueryObject;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -31,6 +32,14 @@ public interface TeacherCourseMapper {
      * @param course
      */
     void insert(Course course);
-    void addTeachAndCourse(@Param("courID") Long courID,@Param("teacherID")Long teacherID);
+    void addUserAndCourse(@Param("courID") Long courID,@Param("teacherID")Long teacherID);
 
+    /**
+     * 添加学生到课程/学生加入某课程
+     * 更新course表
+     */
+    void addStu2Cour(@Param("cID")Long cID);
+
+    //插入多用户与课程关系
+    void addUsersAndCourse(@Param("stuIds")Long[] stuIds, @Param("cId")Long cId);
 }
