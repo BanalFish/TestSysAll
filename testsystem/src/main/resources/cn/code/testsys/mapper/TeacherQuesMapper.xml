@@ -9,10 +9,24 @@
                       right join answer on answer.queID=ques.id
     </select>
 
+    <select id="getQueIds" resultType="long">
+        select id from ques
+    </select>
 
     <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
         insert into ques(problem,score,type,courID,degree)
-        value(#{problem},#{score},#{type},#{course.id},#{degree})
+        value(#{problem},#{score},#type},#{course.id},#{degree})
+
+
+    </insert>
+
+    <insert id="insertQues" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into ques(problem,score,type,courID,degree)
+        value
+        <foreach collection="list" item="que" separator=",">
+            (#{que.problem},#{que.score},#{que.type},#{que.course.id},#{que.degree})
+        </foreach>
+
     </insert>
 
     <insert id="insQueAndAns" useGeneratedKeys="true" keyColumn="id" keyProperty="id">

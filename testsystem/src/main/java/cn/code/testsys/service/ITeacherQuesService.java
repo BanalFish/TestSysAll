@@ -12,7 +12,11 @@ public interface ITeacherQuesService {
 
     void insert(Question question, Answer answer);
 
+    void insertQues(List<Question> questions);
+
     void delete(Long id);
 
     void update(Question question,Answer answer);
+
+    List<Long> getQueIds();
 }

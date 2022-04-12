@@ -28,6 +28,11 @@ public class TeacherQuesServiceImpl implements ITeacherQuesService {
     }
 
     @Override
+    public void insertQues(List<Question> questions) {
+        teacherQuesMapper.insertQues(questions);
+    }
+
+    @Override
     public void delete(Long id) {
         teacherQuesMapper.delete(id);
         teacherQuesMapper.delQueAndAns(id);
@@ -38,6 +43,11 @@ public class TeacherQuesServiceImpl implements ITeacherQuesService {
         teacherQuesMapper.delete(question.getId());
         teacherQuesMapper.insert(question);
         teacherQuesMapper.insQueAndAns(question.getId(), answer);
+    }
+
+    @Override
+    public List<Long> getQueIds() {
+        return teacherQuesMapper.getQueIds();
     }
 
 

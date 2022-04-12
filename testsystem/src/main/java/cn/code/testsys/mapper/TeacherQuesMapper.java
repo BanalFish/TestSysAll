@@ -11,11 +11,12 @@ public interface TeacherQuesMapper {
     //根据试卷Id返回包含的题目
     List<Question> seleQuesByPId(Long pId);
 
+    List<Long> getQueIds();
     /**
      * 新增题目信息
-     * @param question
      */
     void insert(Question question);
+    void insertQues(List<Question> questions);
 
     /**
      * 增加题目与答案关系

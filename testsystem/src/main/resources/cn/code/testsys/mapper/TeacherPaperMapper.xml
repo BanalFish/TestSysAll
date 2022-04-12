@@ -24,7 +24,7 @@
             (ques inner join paper_ques on paper_ques.queID=ques.id
                 and paper_ques.paperID in
 
-                <foreach collection="list" item="paperID" index="index"
+                <foreach collection="array" item="paperID" index="index"
                          open="(" close=")" separator=",">
                     #{paperID}
                 </foreach>
@@ -44,7 +44,25 @@
         left join testpaper on testpaper.id=paper_ques.paperID
     </select>
 
-    <insert id="paperInput" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <select id="getLast" resultMap="outTestPaper">
+        SELECT *  from testpaper ORDER BY id DESC limit 1
+    </select>
+
+    <insert id="insertPaper" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into testpaper(name,status,allAnswer)
+        values(#{paper.name},#{paper.status},#{paper.allAnswer})
+    </insert>
+
+    <insert id="inputQues" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into paper_ques(paperID,queID) values
+        <foreach collection="list" item="queId" index="index" separator=",">
+            (#{pId},#{queId})
+        </foreach>
 
     </insert>
+
+    <delete id="delPaperQues">
+        delete from paper_ques where
+        paperID=#{pId}
+    </delete>
 </mapper>

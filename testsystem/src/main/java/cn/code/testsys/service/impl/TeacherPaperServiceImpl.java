@@ -21,7 +21,33 @@ public class TeacherPaperServiceImpl implements ITeacherPaperService {
     }
 
     @Override
+    public void insertPaper(TestPaper paper) {
+        teacherPaperMapper.insertPaper(paper);
+    }
+
+    @Override
     public TestPaper selePaperById(Long pId) {
         return teacherPaperMapper.selePaperById(pId);
+    }
+
+    @Override
+    public TestPaper getLast() {
+        return teacherPaperMapper.getLast();
+    }
+
+    @Override
+    public void inputQues(List<Long> questionIds, Long pId) {
+        teacherPaperMapper.inputQues(questionIds,pId);
+    }
+
+    @Override
+    public void delQues(Long pId) {
+        teacherPaperMapper.delPaperQues(pId);
+    }
+
+    @Override
+    public void updateQues(List<Long> questionIds, Long pId) {
+        teacherPaperMapper.delPaperQues(pId);
+        teacherPaperMapper.inputQues(questionIds,pId);
     }
 }

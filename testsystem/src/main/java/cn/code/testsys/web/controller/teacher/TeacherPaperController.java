@@ -43,40 +43,49 @@ public class TeacherPaperController {
     public DoubResult paperInput(@RequestBody ParamPaper paper){
         Long pId=paper.getPaper().getId();
         DoubResult doub=new DoubResult();
-        if(pId!=null){//修改试卷
+        if(pId!=null){//修改试卷返回试卷及问题
             TestPaper testPaper = paperService.selePaperById(pId);
             List<Question> questions=quesService.seleQuesByPId(pId);
             doub.setData(testPaper);
             doub.setDataSec(questions);
-            doub.setCode(200);
+            doub.setCode(204);
+            doub.setMessage("返回已存试卷信息成功");
+            return doub;
         }
-        //新增试卷
-        return doub;
+        //新增试卷不返回任何数据
+        else{
+            return (DoubResult) doub.setCode(206).setMessage("新增试卷页面");
+        }
+
     }
 
     @PostMapping("/paper/save")
     @ApiOperation(value="保存试卷问题")
     public Result paperSaveQues(@RequestParam ParamPaper paper){
         //如果传入的问题为空
-        if(paper.getQuestions()==null)
-            return new Result<>().setData(202).setMessage("请添加题目到试卷");
-        //新增
+        if(paper.getQuestionIds()==null)
+            return new Result<>().setData(208).setMessage("请添加题目到试卷");
+        //新增试卷
         if(paper.getPaper().getId()==null){
             //添加试卷基本信息
-        }
-        return null;
-    }
+            paperService.insertPaper(paper.getPaper());
+            TestPaper p=paperService.getLast();//获取最新的试卷
+            paperService.inputQues(paper.getQuestionIds(),p.getId());
 
-    @PostMapping("/paper/savePaper")
-    @ApiOperation(value="保存试卷基本信息")
-    public Result paperSavePaper(@RequestParam ParamPaper paper){
-        return null;
+            return new Result().setCode(210).setMessage("新增试卷成功");
+        }
+        //修改试卷，只修改题号的组合，不能修改题目
+        else{
+            paperService.updateQues(paper.getQuestionIds(),paper.getPaper().getId());
+            return new Result().setCode(212).setMessage("修改试卷成功");
+        }
+
     }
 }
 
 @ApiModel
 @Data
 class ParamPaper{
-    List<Question> questions;
+    List<Long> questionIds;
     TestPaper paper;
 }
