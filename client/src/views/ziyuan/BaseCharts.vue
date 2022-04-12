@@ -14,7 +14,7 @@
             <div class="ziyuan-input-left">
               <el-input
                 placeholder="请输入内容"
-                v-model="input3"
+                v-model="input"
                 class="input-with-select"
               >
                 <!-- 
@@ -32,7 +32,7 @@
                 </template>
                 <template v-slot:append>
                   <!-- <el-button slot="append" icon="el-icon-search"></el-button> -->
-                  <el-button icon="el-icon-search"></el-button>
+                  <el-button icon="el-icon-search" @click="handlesearch"></el-button>
                 </template>
               </el-input>
             </div>
@@ -73,13 +73,16 @@ export default {
   },
   setup() {
     const activeName = ref("first");
-    const input3 = ref("");
+    const input = ref("");
     const select = ref("");
     const select2 = ref("");
     const select3 = ref("");
     const optionClick = (value)=>{
         console.log(123,value);
     }
+ const handlesearch = () => {
+      console.log(input.value);
+    };
     const handleClick = (tab, event) => {
       // console.log(tab, event);
     };
@@ -91,10 +94,11 @@ export default {
     };
     return {
       activeName,
-      input3,
+      input,
       select,
       select2,
       select3,
+      handlesearch,
       handleClick,
       optionClick,
       handleAdd,
