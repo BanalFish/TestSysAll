@@ -42,4 +42,6 @@ public interface TeacherCourseMapper {
 
     //插入多用户与课程关系
     void addUsersAndCourse(@Param("stuIds")Long[] stuIds, @Param("cId")Long cId);
+
+    Long getTidByCid(Long cId);
 }

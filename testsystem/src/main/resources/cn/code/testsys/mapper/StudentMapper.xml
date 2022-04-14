@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.code.testsys.mapper.StudentMapper">
+
+    <resultMap id="stuTestPaper" type="cn.code.testsys.domain.outDTO.OutPaper">
+        <id property="paperID" column="tId"/>
+        <result property="name" column="name"/>
+        <collection property="outQuestions" ofType="cn.code.testsys.domain.Question">
+            <id property="id" column="id"/>
+            <result property="problem" column="problem"/>
+            <result property="score" column="score"/>
+            <result property="type" column="type"/>
+            <result property="degree" column="degree"/>
+        </collection>
+    </resultMap>
+
+    <select id="courList" resultType="cn.code.testsys.domain.Course">
+        select course.* from  course
+            INNER JOIN user_cour on course.id=user_cour.courID
+            and userID=#{sId}
+    </select>
+
+    <select id="testList" resultType="cn.code.testsys.domain.Test">
+        select test.* from test
+                               inner join cour_test on cour_test.testID=test.id
+                               inner join user_cour on user_cour.courID=cour_test.courID
+            and userID=#{sId}
+    </select>
+
+    <resultMap id="simpTest" type="cn.code.testsys.domain.Test">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="status" column="status"/>
+        <result property="startTime" column="startTime"/>
+        <result property="endTime" column="endTime"/>
+        <result property="testPaper.id" column="paperID"/>
+    </resultMap>
+
+    <select id="get1cTest" resultMap="simpTest">
+        select test.* from test
+        inner join cour_test on cour_test.testID=test.id and courID=#{cId}
+    </select>
+
+    <select id="get1paper" resultMap="stuTestPaper">
+        select testpaper.id tId,testpaper.name,ques.* from testpaper
+                inner join paper_ques on testpaper.id=paper_ques.paperID and paperID=#{pId} and testpaper.status =1
+                inner join ques on paper_ques.queID=ques.id
+    </select>
+
+    <insert id="addCour" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into usercour(userID,courID) values(#{sId},#{cId})
+    </insert>
+
+    <update id="addCourPeople">
+        update course set count=count+1 where id=#{cId}
+    </update>
+
+</mapper>

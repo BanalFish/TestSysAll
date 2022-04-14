@@ -8,6 +8,7 @@ import java.util.List;
 public class OutPaper {
 
     private Long paperID;
+    private String name;
     private int status;
     private List<outQuestion> outQuestions;
 }

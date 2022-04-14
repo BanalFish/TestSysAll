@@ -20,4 +20,6 @@ public interface TeacherTestMapper {
      * @return
      */
     List<Long> getPaperIds(Long teachID);
+
+    Long getPidByTid(Long testId);
 }

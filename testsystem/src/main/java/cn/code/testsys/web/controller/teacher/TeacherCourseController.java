@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//教师课程管理
+
 //@CrossOrigin
 @RestController
 @RequestMapping("/teacher")

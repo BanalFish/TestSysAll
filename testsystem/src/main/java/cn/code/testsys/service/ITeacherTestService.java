@@ -9,4 +9,6 @@ public interface ITeacherTestService {
     List<Test> testListById(Long teachID);
 
     List<Long> getPaperIds(Long teachID);
+
+    Long getPidByTid(Long testId);
 }

@@ -23,4 +23,9 @@ public class TeacherTestServiceImpl implements ITeacherTestService {
     public List<Long> getPaperIds(Long teachID) {
         return teacherTestMapper.getPaperIds(teachID);
     }
+
+    @Override
+    public Long getPidByTid(Long testId) {
+        return teacherTestMapper.getPidByTid(testId);
+    }
 }

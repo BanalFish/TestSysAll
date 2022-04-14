@@ -55,4 +55,9 @@ public class TeacherCourseServiceImpl implements ITeacherCourseService {
         teacherCourseMapper.addStu2Cour(cId);
         teacherCourseMapper.addUsersAndCourse(stuIds,cId);
     }
+
+    @Override
+    public Long getTidByCid(Long cId) {
+        return teacherCourseMapper.getTidByCid(cId);
+    }
 }

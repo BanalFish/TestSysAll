@@ -20,4 +20,6 @@ public interface ITeacherCourseService {
     List<Course> selectByUser(Long id);
 
     void addStu2Cour(Long[] stuIds, Long cId);
+
+    Long getTidByCid(Long cId);
 }

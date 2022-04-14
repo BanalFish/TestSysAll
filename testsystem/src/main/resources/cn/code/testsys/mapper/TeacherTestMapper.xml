@@ -23,8 +23,8 @@
     </resultMap>
 
     <select id="testListById" resultMap="testMapper" >
-        select test.*,course.*,course.`name` "courName" from
-            (course inner join user_cour on user_cour.courID=course.id and user_cour.userID=#{teachID})
+        select test.*,course.*,course.`name` "courName" from course
+                inner join user_cour on user_cour.courID=course.id and user_cour.userID=#{teachID})
                 inner join cour_test on cour_test.courID=user_cour.courID
                 inner JOIN test on cour_test.testID=test.id
                 inner join testpaper on test.paperID=testpaper.id
@@ -36,4 +36,9 @@
                 inner join cour_test on cour_test.courID=user_cour.courID
                 inner JOIN test on cour_test.testID=test.id
     </select>
+
+    <select id="getPidByTid" resultType="long">
+        select paperID from test where id=#{testId}
+    </select>
+
 </mapper>

@@ -8,10 +8,7 @@ import cn.code.testsys.qo.DoubResult;
 import cn.code.testsys.qo.Result;
 import cn.code.testsys.service.ITeacherQuesService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
