@@ -5,8 +5,8 @@
     <resultMap id="stuTestPaper" type="cn.code.testsys.domain.outDTO.OutPaper">
         <id property="paperID" column="tId"/>
         <result property="name" column="name"/>
-        <collection property="outQuestions" ofType="cn.code.testsys.domain.Question">
-            <id property="id" column="id"/>
+        <collection property="outQuestions" ofType="cn.code.testsys.domain.outDTO.outQuestion">
+            <id property="queID" column="id"/>
             <result property="problem" column="problem"/>
             <result property="score" column="score"/>
             <result property="type" column="type"/>
@@ -48,11 +48,30 @@
     </select>
 
     <insert id="addCour" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-        insert into usercour(userID,courID) values(#{sId},#{cId})
+        insert into user_cour(userID,courID) values(#{sId},#{cId})
     </insert>
 
     <update id="addCourPeople">
         update course set count=count+1 where id=#{cId}
+    </update>
+
+    <insert id="addStuTest" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into stutest(singTestID,stuID,total)
+        values(#{singTestID},#{stuID},#{total})
+    </insert>
+
+
+    <insert id="submit" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into stupaper(stutestID,queID,myanswer,grade)
+        values
+               <foreach collection="map" item="map" index="index" separator="," close=";">
+                   (#{stutestID}, #{map.queID},#{map.myanswer},0)
+               </foreach>
+
+    </insert>
+
+    <update id="updateFin">
+        update stutest set finTime=#{finTime},finStatus=0
     </update>
 
 </mapper>

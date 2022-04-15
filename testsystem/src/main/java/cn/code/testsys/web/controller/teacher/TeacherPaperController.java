@@ -61,10 +61,10 @@ public class TeacherPaperController {
 
     @PostMapping("/paper/save")
     @ApiOperation(value="保存试卷问题")
-    public Result paperSaveQues(@RequestParam ParamPaper paper){
+    public Result paperSaveQues(@RequestBody ParamPaper paper){
         //如果传入的问题为空
         if(paper.getQuestionIds()==null)
-            return new Result<>().setData(208).setMessage("请添加题目到试卷");
+            return new Result<>().setData(400).setMessage("请添加题目到试卷");
         //新增试卷
         if(paper.getPaper().getId()==null){
             //添加试卷基本信息

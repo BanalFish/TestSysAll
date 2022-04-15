@@ -55,7 +55,7 @@ public class TeacherQuesController {
 
         if(question.getId()==null){//新增
             if(question.getProblem()==null){
-                return new Result<Question>().setCode(202).setMessage("请先添加题目信息");
+                return new Result<Question>().setCode(402).setMessage("请先添加题目信息");
             }
             iTeacherQuesService.insert(question,answer);
         }

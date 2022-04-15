@@ -1,15 +1,16 @@
 package cn.code.testsys.service.impl;
 
-import cn.code.testsys.domain.Course;
-import cn.code.testsys.domain.Test;
-import cn.code.testsys.domain.TestPaper;
+import cn.code.testsys.domain.*;
 import cn.code.testsys.domain.outDTO.OutPaper;
 import cn.code.testsys.mapper.StudentMapper;
 import cn.code.testsys.service.IStudentService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StudentServiceImpl implements IStudentService {
@@ -41,5 +42,20 @@ public class StudentServiceImpl implements IStudentService {
     public void addCour(Long sId, Long cId) {
         studentMapper.addCour(sId,cId);
         studentMapper.addCourPeople(cId);
+    }
+
+    @Override
+    public void addStuTest(stuTest stuTest) {
+        studentMapper.addStuTest(stuTest);
+    }
+
+    @Override
+    public void submit(Long stutestID, List<Map> map){
+        studentMapper.submit(stutestID,map);
+    }
+
+    @Override
+    public void updateFin(Date finTime) {
+        studentMapper.updateFin(finTime);
     }
 }

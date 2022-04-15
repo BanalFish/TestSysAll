@@ -12,17 +12,12 @@ import java.io.Serializable;
 @ApiModel(value="用户对象")
 public class User implements Serializable {
 
-    @ApiModelProperty
+
     private Long id;
-    @ApiModelProperty
     private String number;
-    @ApiModelProperty
     private String name;
-    @ApiModelProperty
     private String password;
-    @ApiModelProperty
     private int dep;
-    @ApiModelProperty
     private int who;
 
 }
